@@ -7,9 +7,7 @@ function computerPlay() {
 }
 
 // function plays 1 round of rps
-// input: playerSelection, computerSelection
-// output: return string with winner, "You Lose! Paper beats Rock"
-// req: case-insensitive
+// req: case-insensitive input for playerSelection
 function playRound(playerSelection, computerSelection) {
     let player = playerSelection[0].toUpperCase() + playerSelection.substring(1)
     let computer = computerSelection
@@ -25,3 +23,23 @@ function playRound(playerSelection, computerSelection) {
 let playerSelection = "rock";
 let computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
+
+// function to play game 5 times 
+// output: winner in each round, final winner
+function game(n) {
+    // vars to keep score
+    // let playerWins = 0
+    // let computerWins = 0
+    for (let i = 0; i < n; i++) {
+        console.log(`Round {i+1}`)
+        playRound(playerSelection, computerSelection)
+        // track winner in each round
+        // if (playRound(playerSelection, computerSelection) == `You Win! ${player} beats ${computer}`) {
+        //     playerWins += 1
+        // } else if (playRound(playerSelection, computerSelection) == `You Lose! ${computer} beats ${player}`) {
+        //     computerWins += 1
+        // }
+    }
+}
+
+// game(5)
