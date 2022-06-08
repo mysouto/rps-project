@@ -11,15 +11,13 @@ function computerPlay() {
 // output: return string with winner, "You Lose! Paper beats Rock"
 // req: case-insensitive
 function playRound(playerSelection, computerSelection) {
-    player = playerSelection.toLowerCase()
-    computer = computerSelection.toLowerCase()
+    let player = playerSelection[0].toUpperCase() + playerSelection.substring(1)
+    let computer = computerSelection
     if (player == computer) {
         return "It's a tie!"
-    }
-    
-    if ((player == "rock" && computer == "scissors") || (player == "paper" && computer == "rock") || (player == "scissors" && computer == "paper")) {
+    } else if ((player == "Rock" && computer == "Scissors") || (player == "Paper" && computer == "Rock") || (player == "Scissors" && computer == "Paper")) {
         return `You Win! ${player} beats ${computer}`
-    } else if ((computer == "rock" && player == "scissors") || (computer == "paper" && player == "rock") || (computer == "scissors" && player == "paper")) {
+    } else if ((computer == "Rock" && player == "Scissors") || (computer == "Paper" && player == "Rock") || (computer == "Scissors" && player == "Paper")) {
         return `You Lose! ${computer} beats ${player}`
     }
 }
